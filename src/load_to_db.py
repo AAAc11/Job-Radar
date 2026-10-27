@@ -14,7 +14,7 @@ def load_data_to_db():
     db_name = os.getenv("DB_NAME")
 
     db_engine = create_engine(
-        f"postgresql://{db_user}:{db_password}@localhost:5432/{db_name}"
+        f"postgresql://{db_user}:{db_password}@host.docker.internal:5432/{db_name}"
     )
     clean_data.to_sql(
         name="nfj_job_offers", index=False, con=db_engine, if_exists="replace"
