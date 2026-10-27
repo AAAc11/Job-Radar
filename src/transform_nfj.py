@@ -77,12 +77,10 @@ def tranform_json_to_db():
         )
 
         normalized_data["seniority"] = normalized_data["seniority"].str[0]
-        normalized_data["location.places"] = normalized_data[
-            "location.places"
-        ].apply(get_location)
-        normalized_data["posted"] = pd.to_datetime(
-            normalized_data["posted"], unit="ms"
+        normalized_data["location.places"] = normalized_data["location.places"].apply(
+            get_location
         )
+        normalized_data["posted"] = pd.to_datetime(normalized_data["posted"], unit="ms")
         normalized_data["renewed"] = pd.to_datetime(
             normalized_data["renewed"], unit="ms"
         )

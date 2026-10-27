@@ -51,7 +51,7 @@ def fetch_data_from_api():
 
         print(
             f"Donwloaded {len(offers_on_page)}. "
-            "Total number of offers: {len(job_offers)}"
+            f"Total number of offers: {len(job_offers)}"
         )
 
         job_offers.extend(offers_on_page)
@@ -65,8 +65,7 @@ def fetch_data_from_api():
     print(f"\nOffers saved to {destination_folder}")
 
     print(
-        "\nDonwloading from NoFluffJobs done. "
-        f"Downloaded offers: {len(job_offers)}"
+        "\nDonwloading from NoFluffJobs done. " f"Downloaded offers: {len(job_offers)}"
     )
 
 
