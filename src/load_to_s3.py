@@ -17,9 +17,7 @@ def upload_raw_data_to_s3():
     print("Sending raw data to S3")
 
     try:
-        s3_client.upload_file(
-            Filename=file_path, Bucket=bucket_name, Key=target_path
-        )
+        s3_client.upload_file(Filename=file_path, Bucket=bucket_name, Key=target_path)
     except Exception as e:
         print(f"Error occured: {e}")
     else:
