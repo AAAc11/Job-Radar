@@ -1,9 +1,9 @@
 import requests
 import json
 import time
+import os
 
 URL = "https://nofluffjobs.com/api/joboffers/main"
-destination_folder = "data/raw_nfj.json"
 
 
 def fetch_data_from_api():
@@ -59,10 +59,12 @@ def fetch_data_from_api():
         current_page += 1
         time.sleep(0.5)
 
-    with open(destination_folder, "w", encoding="utf-8") as f:
+    os.makedirs("data", exist_ok=True)
+
+    with open("data/raw_nfj.json", "w", encoding="utf-8") as f:
         json.dump(job_offers, f, ensure_ascii=False, indent=4)
 
-    print(f"\nOffers saved to {destination_folder}")
+    print(f"\nOffers saved to {"data/raw_nfj.json"}")
 
     print(
         "\nDonwloading from NoFluffJobs done. " f"Downloaded offers: {len(job_offers)}"
