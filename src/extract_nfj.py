@@ -6,7 +6,7 @@ import os
 URL = "https://nofluffjobs.com/api/joboffers/main"
 
 
-def fetch_data_from_api():
+def fetch_data_from_nfj_api():
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -72,4 +72,5 @@ def fetch_data_from_api():
 
 
 if __name__ == "__main__":
-    fetch_data_from_api()
+    print("Downloading data from NoFluffJobs API")
+    fetch_data_from_nfj_api()
